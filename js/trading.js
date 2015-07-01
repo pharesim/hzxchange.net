@@ -215,24 +215,6 @@ function getAssets(){
 	processAssets();
 }
 
-function calculate(a,b,operator,cf){
-	cf = typeof cf !== 'undefined' ? cf : 100000000;
-	if(operator == '*') {
-		if(cf != 1) {
-			a = calculate(a,cf,'*',1);
-			b = calculate(b,cf,'*',1);
-			x = calculate(cf,cf,'*',1);
-			y = (a * b) / x;
-		} else {
-			y = Math.round(a * b);
-		}
-
-		return y;
-	} else if(operator == '+') {
-		return (calculate(a,cf,'*') + calculate(b,cf,'*')) / cf;
-	}
-}
-
 function processAssets(){
 	var total  = 0;
 	var bids   = false;

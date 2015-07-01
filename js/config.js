@@ -1,0 +1,1 @@
+var server           = 'http://api.nhzcrypto.org:7776';

@@ -1,4 +1,3 @@
-var server           = 'http://api.nhzcrypto.org:7776';
 var genesisRS        = 'NHZ-8HAA-H88W-UVT5-DUGLV';
 var password         = '';
 var pubkey           = '';       
@@ -629,6 +628,4 @@ $(document).ready(function() {
 	$("#server").change(function(){
 		server = $("#server").val();
 	});
-
-	getAssets();
 });

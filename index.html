@@ -28,6 +28,149 @@
 
 			var assets = {}
 		</script>
+		<title>HZxChange | Safe, Decentralized Crypto Trading</title>
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" type="text/css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/themify-icons.min.css">
+		<link rel="stylesheet" href="css/animate.min.css" media="screen">
+		<link rel="stylesheet" href="css/perfect-scrollbar.min.css" media="screen">
+		<link rel="stylesheet" href="css/switchery.min.css" media="screen">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/plugins.css">
+		<link rel="stylesheet" href="css/themes/theme-1.css" id="skin_color" />
+
+		<style>
+		.thstyle {margin:0px; padding:10px;} 
+		.h5style {font-size:0.9em; margin-bottom:0px}
+		.tdstyle {margin:0px; padding:10px; text-align:right;}
+		.dataTables_length {padding-bottom:20px; width:50%; float:left;}
+		.dataTables_filter label {margin-bottom:20px;} 
+		.dataTables_info {margin-top:20px; text-align:right; font-family: "Raleway", sans-serif; text-transform:uppercase; font-weight:400;}
+		.sidertext {font-weight:400; margin-bottom:20px; line-height:1.2em}
+		.tabletext {font-weight:400;}
+		.postedby {font-size:0.7em; font-weight:700; text-align:right; margin-bottom:20px;}
+		@media (max-width: 800px) {
+		.mobilehide { display: none; }
+		.topgap { margin-top:120px; }
+		      }
+		@media (min-width: 801px) {
+		      }
+
+
+		*, *:after, *:before{
+			-moz-box-sizing: border-box;
+			     box-sizing: border-box;
+		}
+		body{
+			margin: 0;
+			font-family: "Open Sans",sans-serif;
+		}
+		.loader-wrap{
+			background: #333 url("back.png") repeat center center fixed;
+			height: 100%;
+			width: 100%;
+			position: fixed;
+			z-index: 99999;
+		}
+		.loader{
+			font-size: 0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translateX(-50%) translateY(-50%);
+			    -ms-transform: translateX(-50%) translateY(-50%);
+		                transform: translateX(-50%) translateY(-50%);
+			width: 120px;
+			height: 20px;
+		}
+		.loader:after{
+			color: rgba(0,183,229,0.9);
+			content: "Loading...";
+			font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+			font-size: 15px;
+			position: absolute;
+			width: 120px;
+			top: 40px;
+			left: 5px;
+			text-align: center;
+		}
+		[class*='box-']{
+			display: inline-block;
+			font-size: 15px;
+			line-height: 20px;
+			margin-right: 5px;
+			height: 20px;
+			width: 20px;
+			border: 5px solid rgba(0,183,229,0.9);
+			border-right: 5px solid transparent;
+			border-left: 5px solid transparent;
+			box-shadow: 0 0 10px #2187e7;
+			border-radius: 50%;
+			-webkit-transform: scale(0.7);
+			    -ms-transform: scale(0.7);
+			        transform: scale(0.7);
+			-webkit-animation: loader 1s infinite linear;
+			        animation: loader 1s infinite linear;
+		}
+		[class*='box-']:last-child{
+			margin-right: 0;
+		}
+		.box-1{
+			-webkit-animation-delay: .4s;
+			        animation-delay: .4s;
+		}
+		.box-2{
+			-webkit-animation-delay: .3s;
+			        animation-delay: .3s;
+		}
+		.box-3{
+			-webkit-animation-delay: .2s;
+			        animation-delay: .2s;
+		}
+		.box-4{
+			-webkit-animation-delay: .3s;
+			        animation-delay: .3s;
+		}
+		.box-5{
+			-webkit-animation-delay: .4s;
+			        animation-delay: .4s;
+		}
+		@-webkit-keyframes loader{
+		    0% {
+		        -webkit-transform: scale(1.2);
+		                transform: scale(1.2);
+		        opacity: 1;
+		    }
+
+		    100% {
+		        -webkit-transform: scale(0.7) rotate(10deg);
+		                transform: scale(0.7) rotate(10deg);
+		        opacity: 0.1;
+		    }
+		}
+		@keyframes loader{
+		    0% {
+		        -webkit-transform: scale(1.2);
+		                transform: scale(1.2);
+		        opacity: 1;
+		    }
+
+		    100% {
+		        -webkit-transform: scale(0.7) rotate(10deg);
+		                transform: scale(0.7) rotate(10deg);
+		        opacity: 0.1;
+		    }
+		}
+		</style>
+
+		<link href="css/select2.min.css" rel="stylesheet" media="screen">
+		<link href="DataTables/css/DT_bootstrap.css" rel="stylesheet" media="screen">
 	</head>
 
 	<body>
@@ -44,23 +187,400 @@
 		<div id="app">
 			<div class="app-content">
 
-				<div id="navbar"></div>
+				<header class="navbar navbar-default navbar-static-top">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<img src="img/hzx_logo.png" alt="HZxCHANGE - Safe, decentralized crypto trading."/>
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navlogin" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="navbar-collapse collapse" id="navlogin">
+							<ul class="nav navbar-right" style="width:400px;">
+								<li style="width:400px;">
+									<div id="loginbox" class="unidentified">
+										<fieldset>
+											<legend>
+												<h2 class="h5style tabletext" style="margin-top:5px; font-size:0.8em;">
+													ENTER YOUR HORIZON PASSPHRASE
+												</h2>
+											</legend>
+											<table width="100%" border="0">
+												<tr>
+													<td><span class="input-icon">
+														<input type="password" id="passphrase_field" class="form-control" style="width:90%" />
+														<i class="ti-lock"></i>
+													</span></td>
+													<td style="text-align:right;">
+														<a href="#" class="btn btn-primary" id="login_button">LOGIN</a>
+													</td>
+												</tr>
+											</table>
+										</fieldset>
+									</div>
+									<div id="logoutbox" class="identified">
+										<fieldset>
+											<legend>
+												<h2 class="h5style tabletext" style="margin-top:5px; font-size:0.8em;">
+													<span id="accountrs"></span>
+												</h2>
+											</legend>
+											<img src="img/busy.gif" id="login_loading" class="loading_hidden" />
+											<div id="loggedin_content">
+												<div id="balance">
+													<table width="100%" border="0">
+														<tr>
+															<td style="text-align:center;">
+																<h2 class="h5style tabletext" style="margin-top:5px; font-size:0.9em;">
+																	Your current balance is <span class="hzbalance"></span> HZ
+																</h2>
+																<div class="logoutbutton">
+																	<h2 class="h5style" style="text-align:right; font-weight:400; margin-top:10px;">
+																		<a href="#" class="logout">CLICK HERE TO LOG OUT</a>
+																	</h2>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</div>
+												<div id="new_account">
+													<table width="100%" border="0">
+														<tr>
+															<td style="text-align:center;">
+																<h2 class="h5style tabletext" style="margin-top:5px; font-size:0.8em;">
+																	Please visit
+																	<a href="https://faucet.horizonplatform.io" target="_blank">
+																		HZ Faucet
+																	</a>
+																	to make your first transaction. Your public key is:
+																	<span id="pubkey"></span>
+																</h2>
+																<div class="logoutbutton">
+																	<h2 class="h5style" style="text-align:right; font-weight:400; margin-top:10px;">
+																		<a href="#" class="logout">CLICK HERE TO LOG OUT</a>
+																	</h2>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</header>
 
-				<div class="wrap-content" id="container" style="margin:30px;">
+				<div class="wrap-content" id="tradingcontainer" style="margin:30px;">
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-9" style="margin-bottom:30px; padding-left:30px; padding-right:30px;">
-								<div id="tradingcontainer"></div>
+
+								<h1 class="mainTitle" style="font-weight:bold; margin-bottom:10px; margin-top:0px; text-align:center;">
+									SAFE, DECENTRALIZED CRYPTO TRADING
+								</h1>
+
+								<!-- <div class="showCurrency inHZ">
+									<h2 style="font-size:1.2em; font-weight:bold; text-align:center;">
+										PRICES CURRENTLY SHOWN IN HZ
+									</h2>
+								</div>
+								<div class="showCurrency inBTC">
+									<h2 style="font-size:1.2em; font-weight:bold; text-align:center;">
+										PRICES CURRENTLY SHOWN IN BTC
+									</h2>
+								</div>
+								<div>
+									<h2 style="font-size:1em; font-weight:bold; text-align:center; margin-bottom:20px;">
+										SHOW PRICES IN <a href="#" id="showHZ">HZ</a> / <a href="#" id="showBTC">BTC</a>
+									</h2>
+								</div> -->
+
+								<div class="tabbable">
+									<ul id="myTab2" class="nav nav-tabs nav-justified">
+										<li class="active">
+											<a href="#myTab2_example1" data-toggle="tab">
+												<h2 style="font-size:1.2em; font-weight:bold;padding-top:10px;">
+													CRYPTOCURRENCIES
+												</h2>
+											</a>
+										</li>
+										<li>
+											<a href="#myTab2_example2" data-toggle="tab">
+												<h2 style="font-size:1.2em; font-weight:bold; padding-top:10px;">
+													TRUSTED ASSETS
+												</h2>
+											</a>
+										</li>
+									</ul>
+
+									<div class="tab-content">
+										<div class="tab-pane fade in active" id="myTab2_example1">
+											<div class="table-responsive">
+												<table class="table table-striped table-bordered table-hover table-full-width" id="sample_1">
+													<thead>
+														<tr>
+															<th class="thstyle">
+																<h2 class="h5style" style="font-weight:bold;">
+																	NAME
+																</h2>
+															</th>
+															<th class="thstyle">
+																<h2 class="h5style" style="font-weight:bold;">
+																	LAST TRADE
+																</h2>
+															</th>
+															<th class="thstyle">
+																<h2 class="h5style" style="font-weight:bold;">
+																	BID
+																</h2>
+															</th>
+															<th class="thstyle">
+																<h2 class="h5style" style="font-weight:bold;">
+																	ASK
+																</h2>
+															</th>
+															<th class="thstyle">
+																<h2 class="h5style" style="font-weight:bold;">
+																	SPREAD
+																</h5>
+															</th>
+															<th class="thstyle mobilehide">
+																<h2 class="h5style" style="font-weight:bold;">
+																	HIGH
+																</h2>
+															</th>
+															<th class="thstyle mobilehide">
+																<h2 class="h5style" style="font-weight:bold;">
+																	LOW
+																</h2>
+															</th>
+															<th class="thstyle mobilehide">
+																<h2 class="h5style" style="font-weight:bold;">
+																	VOL.
+																</h2>
+															</th>
+															<th class="thstyle">
+																<h2 class="h5style" style="font-weight:bold;">
+																	CHANGE
+																</h2>
+															</th>
+															<th class="no-sort"></th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+										</div>
+
+										<div class="tab-pane fade" id="myTab2_example2">
+											<div class="table-responsive">
+												<table id="sample_2" class="table table-striped table-bordered table-hover table-full-width">
+													<thead>
+														<tr>
+															<th>
+																<h2 class="h5style" style="font-weight:bold;">
+																	NAME
+																</h2>
+															</th>
+															<th>
+																<h2 class="h5style" style="font-weight:bold;">
+																	LAST TRADE
+																</h2>
+															</th>
+															<th class="thstyle">
+																<h2 class="h5style" style="font-weight:bold;">
+																	BID
+																</h2>
+															</th>
+															<th class="thstyle">
+																<h2 class="h5style" style="font-weight:bold;">
+																	ASK
+																</h2>
+															</th>
+															<th>
+																<h2 class="h5style" style="font-weight:bold;">
+																	SPREAD
+																</h2>
+															</th>
+															<th class="thstyle mobilehide">
+																<h2 class="h5style" style="font-weight:bold;">
+																	HIGH
+																</h2>
+															</th>
+															<th class="thstyle mobilehide">
+																<h2 class="h5style" style="font-weight:bold;">
+																	LOW
+																</h2>
+															</th>
+															<th class="mobilehide">
+																<h2 class="h5style" style="font-weight:bold;">
+																	VOL.
+																</h2>
+															</th>
+															<th class="thstyle">
+																<h2 class="h5style" style="font-weight:bold;">
+																	CHANGE
+																</h2>
+															</th>
+															<th class="no-sort"></th>
+														</tr>
+													</thead>
+													<tbody>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+								
 								<a href="#" id="settings_link">Settings</a>
 								<div id="settings" title="Set the Horizon server to use with this application. Use your local node for maximum performance.">
 									<label for="server">Server: </label>
 									<input type="text" id="server" />
 								</div>
 
-								<div id="infomodal"></div>
-								<div id="faqmodal"></div>
+								<div class="modal fade" id="INFO" tabindex="-1" role="dialog" aria-labelledby="INFO" aria-hidden="true">
+									<div class="modal-dialog  modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+												<h2 class="modal-header" style="display: inline; font-weight:bold;">
+													MORE INFO ABOUT HZxCHANGE
+												</h2>
+											</div>
+											<div class="modal-body">
+												<div class="tabbable tabs-left">
+													<ul id="myTab4" class="nav nav-tabs">
+														<li class="active">
+															<a href="#myTab4_example1" data-toggle="tab">
+																<h2 style="font-size:1em; font-weight:400;padding-top:10px;">
+																	ABOUT
+																</h2>
+															</a>
+														</li>
+													</ul>
+													<div class="tab-content">
+														<div class="tab-pane fade in active" id="myTab4_example1">
+															<h2 class="h5style sidertext">
+																HZxCHANGE is a distributed cryptocurrency exchange on the Horizon Platform.
+															</h2>
+															<h2 class="h5style sidertext">
+																Unlike traditional exchanges where trading takes place on servers connected to the wallets used for storage, HZxCHANGE uses the Horizon blockchain instead. As well as being much more secure, it's also totally transparent which means that trades can be verified by anybody.
+															</h2>
+															<h2 class="h5style sidertext">
+																All transactions are signed in your browser, the passphrase is never sent to a remote server. Your funds are stored on a multisig address, making it impossible for a single admin to run away with a wallet. The signatures are held by well-known and trusted members of the HZ (or the coin's) community. There's no public facing server a hacker could target, and even if he finds one that's not enough to get access to any coin. The asset balances are snapshotted regularly, so if someone breaches the issuers account we'll just switch to another asset.
+															</h2>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="modal fade" id="FAQ" tabindex="-1" role="dialog" aria-labelledby="FAQ" aria-hidden="true">
+									<div class="modal-dialog  modal-lg">
+										<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h2 class="modal-header" style="display: inline; font-weight:bold;">QUICK START TRADING GUIDE</h2>
+										</div>
+										<div class="modal-body">
+											<div class="tabbable tabs-left">
+												<ul id="myTab4" class="nav nav-tabs">
+													<li class="active"> <a href="#myTab4_example1" data-toggle="tab">
+														<h2 style="font-size:1em; font-weight:400;padding-top:10px;">LOGGING IN</h2>
+													</a> </li>
+													<li class=""> <a href="#myTab4_example2" data-toggle="tab">
+														<h2 style="font-size:1em; font-weight:400;padding-top:10px;">DEPOSIT ADDRESSES</h2>
+													</a> </li>
+												</ul>
+												<div class="tab-content">
+													<div class="tab-pane fade in active" id="myTab4_example1">
+														<h2 class="h5style sidertext">In order to log into HZxCHANGE, you need to enter the passphrase to your Horizon account. This is normally the string of twelve random words that were assigned to you when you created your account.</h2>
+														<h2 class="h5style sidertext">If you don't have a Horizon account, you can easily create one by entering some text into the login box and your the system will automatically create one for you.</h2>
+														<h2 class="h5style sidertext" style="font-weight:700;">PLEASE ENSURE THAT YOU KEEP YOUR PASSPHRASE IN A SAFE AND SECURE PLACE AS THERE IS NO WAY TO RETRIEVE A LOST PASSPHRASE.</h2>
+														<h2 class="h5style sidertext">Entering your passphrase into the login box is 100% safe as we use a process called 'local signing'. This means that nothing is transferred between your computer and the internet. This site never sends requests to other servers, except the HZ server specified in the settings. Your passphrase never leaves your browser.</h2>
+													</div>
+													<div class="tab-pane fade" id="myTab4_example2">
+														<h2 class="h5style sidertext">When you trade on HZxCHANGE, you need to setup deposit addresses for each currency you are trading with.</h2>
+														<h2 class="h5style sidertext">To do this, you need to click on the blue 'Get Deposit Address' button and wait for the confirmation.</h2>
+														<h2 class="h5style sidertext">Because HZxCHANGE stores all information securely on the Horizon blockchain instead of server-based wallets, it can sometimes take a bit longer to create your deposit address. During this time, the blue button will display a 'Waiting For Address' message before finally updating to 'Deposit'.</h2>
+														<h2 class="h5style sidertext" style="font-weight:700;">THIS CAN TAKE ANYWHERE FROM 60 SECONDS TO 30 MINUTES BUT IS A ONE-TIME ONLY PROCESS FOR EACH COIN. WE BELIEVE THIS IS A FAIR TRADE OFF FOR THE ADDED SECURITY OF NOT HAVING HACKABLE SERVER-BASED WALLETS.</h2>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="col-md-3" style="margin-bottom:50px; padding-left:30px; padding-right:30px;" id="sidebarcontainer"></div>
+						</div>
+
+						<div class="col-md-3" style="margin-bottom:50px; padding-left:30px; padding-right:30px;" id="sidebarcontainer">
+							<a href="#" data-toggle="modal" class="btn  btn-primary h5style details" data-target="#FAQ" style="width:100%; text-align:left; margin-bottom:20px;">
+								<i class="ti-stats-up" style="margin-right:5px;"></i>
+								QUICK START TRADING GUIDE
+							</a>
+							<a href="#" data-toggle="modal" class="btn  btn-primary h5style details" data-target="#INFO" style="width:100%; text-align:left; margin-bottom:20px;">
+								<i class="ti-info-alt" style="margin-right:5px;"></i>
+								MORE INFORMATION
+							</a>
+							<div class="panel-group accordion" id="accordion">
+								<div class="panel panel-white">
+									<div class="panel-heading">
+										<h2 style="font-weight:bold;">
+											<a class="accordion-toggle" data-parent="#accordion" href="#" aria-expanded="true">
+												<i class="ti-rss" style="margin-right:5px;"></i>
+												HZxCHANGE NOTICES
+											</a>
+										</h2>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="">
+										<div class="panel-body" style="padding-bottom:0px; max-height: 400px; overflow-y: auto;" id="news">
+											<h2 class="h5style tabletext">ArgenBits has been added to HZxCHANGE in the Trusted Assets section.</h2>
+											<h2 class="h5style postedby">23 JUNE 2015</h2>
+
+											<h2 class="h5style tabletext">HZSphere has been added to HZxCHANGE in the Trusted Assets section.</h2>
+											<h2 class="h5style postedby">23 JUNE 2015</h2>
+
+											<h2 class="h5style tabletext">HZxBTS has been disabled until further notice.</h2>
+											<h2 class="h5style postedby">09 JUNE 2015</h2>
+
+											<h2 class="h5style tabletext">Trade history and cancelling of orders has been added to the interface.</h2>
+											<h2 class="h5style postedby">29 MAY 2015</h2>
+
+											<h2 class="h5style tabletext">AAssetHZ has been added to HZxCHANGE in the Trusted Assets section.</h2>
+											<h2 class="h5style postedby">25 MAY 2015</h2>
+
+											<h2 class="h5style tabletext">A new era of decentralized trading has begun. HZxCHANGE is ready!</h2>
+											<h2 class="h5style postedby">14 MAY 2015</h2>
+
+											<h2 class="h5style tabletext">Cannabiscoin and Potcoin have been added to HZxCHANGE in the Cryptocurrencies section.</h2>
+											<h2 class="h5style postedby">03 MAY 2015</h2>
+
+											<h2 class="h5style tabletext">HZchronos, HZxchange and UpSTART have been added to HZxCHANGE in the Trusted Assets section.</h2>
+											<h2 class="h5style postedby">02 MAY 2015</h2>
+
+											<h2 class="h5style tabletext">Bitcoin, Bitshares, Dash, Litecoin and NXT have been added to HZxCHANGE in the Cryptocurrencies section.</h2>
+											<h2 class="h5style postedby">01 MAY 2015</h2>
+										<div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -79,8 +599,43 @@
 			</footer>
 		</div>
 
-		<script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script> 
-		<script type="text/javascript" src="/js/getinfo.js"></script>
-		<script type="text/javascript" src="/js/loadpage.js"></script>
+		<script type="text/javascript" src="js/config.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+		<script type="text/javascript" src="js/hzconn.js"></script> 
+		<script type="text/javascript" src="js/getinfo.js"></script>
+		<script type="text/javascript" src="js/loadpage.js"></script>
+		<script type="text/javascript" src="js/cookie.js"></script>
+		<script type="text/javascript" src="js/hz_sign/libs/jsbn.js"></script> 
+		<script type="text/javascript" src="js/hz_sign/libs/jsbn2.js"></script> 
+		<script type="text/javascript" src="js/nhzaddress.js"></script> 
+		<script type="text/javascript" src="js/hz_sign/libs/converters.js"></script> 
+		<script type="text/javascript" src="js/hz_sign/libs/jssha256.js"></script> 
+		<script type="text/javascript" src="js/hz_sign/libs/curve25519.js"></script> 
+		<script type="text/javascript" src="js/hz_sign/libs/curve25519_.js"></script> 
+		<script type="text/javascript" src="js/hz_sign/libs/cryptojs/aes.js"></script> 
+		<script type="text/javascript" src="js/hz_sign/libs/cryptojs/sha256.js"></script> 
+		<script type="text/javascript" src="js/hz_sign/sign.js"></script> 		
+		<script type="text/javascript" src="js/select2.min.js"></script> 
+		<script type="text/javascript" src="DataTables/jquery.dataTables.min.js"></script> 
+		<script type="text/javascript" src="js/table-data.js"></script> 
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+		<script type="text/javascript" src="js/switchery.min.js"></script>
+		<script type="text/javascript" src="js/classie.js"></script> 
+		<script type="text/javascript" src="js/selectFx.js"></script>
+		<script type="text/javascript" src="js/lib.js"></script> 
+		<script type="text/javascript" src="js/main.js"></script> 
+		<script type="text/javascript" src="js/trading.js"></script>
+
+		<script>
+			jQuery(document).ready(function() {
+				TableData.init();
+				Main.init();
+			});
+		</script>
+		<script type="text/javascript">
+			hzprice = <?=$getInfo->hzprice?>;
+		</script>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 <header class="navbar navbar-default navbar-static-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<img src="assets/images/hzx_logo.png" alt="HZxCHANGE - Safe, decentralized crypto trading."/>
+			<img src="/img/hzx_logo.png" alt="HZxCHANGE - Safe, decentralized crypto trading."/>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navlogin" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>

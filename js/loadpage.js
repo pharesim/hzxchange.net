@@ -8,6 +8,7 @@ $.get('include/sidebar.html', '', function (data) { $("#sidebarcontainer").appen
 $.get('include/faq.html', '', function (data) { $("#faqmodal").append(data); });
 $.get('include/info.html', '', function (data) { $("#infomodal").append(data); });
 $.get('include/news.html', '', function (data) { $("#news").append(data); });
+$.get('include/javascript.html', '', function (data) { $("body").append(data); });
 jQuery.ajaxSetup({ async: true });
 
 $(".loading_hidden").hide();

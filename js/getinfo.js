@@ -1,3 +1,56 @@
+function processAssetTradeModal(result,coins,coin,loadpage){
+	console.log(coins);
+	$.get('include/trade'+loadpage+'.html', '', function (data) { 
+		$("#tradingcontainer").append('<div id="modalbox'+result.name+'">'+data+'</div>');
+		$("#modalbox"+result.name+" .modal").attr('id',result.name+'Modal').attr('aria-labelledby',result.name+'Modal');
+		$("#modalbox"+result.name+" h1.modal-header").text(result.name+" ("+coins[coin]+")");
+		$("#modalbox"+result.name+" a.deposit, a.withdrawal").attr("data-asset",coin);
+		$("#modalbox"+result.name+" .asset_name").text(result.name);
+		$("#modalbox"+result.name+" .modal-body fieldset.withdraw").attr('id',result.name+"Withdraw");
+		$("#modalbox"+result.name+" .modal-body fieldset.withdraw label.withdrawamount").attr('for',result.name+"withdrawamount");
+		$("#modalbox"+result.name+" .modal-body fieldset.withdraw input.withdrawamount").attr('id',result.name+"withdrawamount");
+		$("#modalbox"+result.name+" .modal-body fieldset.withdraw span.withdrawmax,.withdrawcancelbutton,.withdrawbutton").attr('data-asset',coins[coin]);
+		$("#modalbox"+result.name+" .modal-body fieldset.withdraw label.withdrawaddress").attr('for',result.name+"withdrawaddress");
+		$("#modalbox"+result.name+" .modal-body fieldset.withdraw input.withdrawaddress").attr('id',result.name+"withdrawaddress");
+		$("#modalbox"+result.name+" .modal-body fieldset.withdraw .withdrawbusy").attr('id',result.name+'withdraw_loading');
+		$.get('include/buy.html', '', function (buy) {
+			$("#modalbox"+result.name+" .buyinclude").append(buy);
+			$("#modalbox"+result.name+" .buyinclude label.buyamount").attr('for',result.name+"buyamount");
+			$("#modalbox"+result.name+" .buyinclude input.buyamount").attr('id',result.name+"buyamount").attr('data-asset',coins[coin]);
+			$("#modalbox"+result.name+" .buyinclude label.buyprice").attr('for',result.name+"buyprice");
+			$("#modalbox"+result.name+" .buyinclude input.buyprice").attr('id',result.name+"buyprice").attr('data-asset',coins[coin]);
+			$("#modalbox"+result.name+" .buyinclude label.buytotal").attr('for',result.name+"buytotal");
+			$("#modalbox"+result.name+" .buyinclude input.buytotal").attr('id',result.name+"buytotal").attr('data-asset',coins[coin]);
+			$("#modalbox"+result.name+" .buyinclude input.buysubmit").attr("data-asset",coin);
+			$("#modalbox"+result.name+" .modal-body fieldset.withdraw .buybusy").attr('id','buy'+result.name+'_loading');
+		});
+		$.get('include/sell.html', '', function (sell) {
+			$("#modalbox"+result.name+" .sellinclude").append(sell);
+			$("#modalbox"+result.name+" .sellinclude span.no_sell").text('You do not have any '+result.name+' to sell');
+			$("#modalbox"+result.name+" .sellinclude label.sellamount").attr('for',result.name+"sellamount");
+			$("#modalbox"+result.name+" .sellinclude input.sellamount").attr('id',result.name+"sellamount").attr('data-asset',coins[coin]);
+			$("#modalbox"+result.name+" .sellinclude label.sellprice").attr('for',result.name+"sellprice");
+			$("#modalbox"+result.name+" .sellinclude input.sellprice").attr('id',result.name+"sellprice").attr('data-asset',coins[coin]);
+			$("#modalbox"+result.name+" .sellinclude label.selltotal").attr('for',result.name+"selltotal");
+			$("#modalbox"+result.name+" .sellinclude input.selltotal").attr('id',result.name+"selltotal").attr('data-asset',coins[coin]);
+			$("#modalbox"+result.name+" .sellinclude input.sellsubmit").attr("data-asset",coin);
+			$("#modalbox"+result.name+" .modal-body fieldset.withdraw .sellbusy").attr('id','sell'+result.name+'_loading');
+		});
+		$.get('include/asks.html', '', function (asks) {
+			$("#modalbox"+result.name+" .asksinclude").append(asks);
+			$("#modalbox"+result.name+" .asksinclude span.no_asks").text('There are no ask orders for '+result.name+' yet');
+		});
+		$.get('include/bids.html', '', function (bids) {
+			$("#modalbox"+result.name+" .bidsinclude").append(bids);
+			$("#modalbox"+result.name+" .bidsinclude span.no_bids").text('There are no bid orders for '+result.name+' yet');
+		});
+		$.get('include/trades.html', '', function (trades) {
+			$("#modalbox"+result.name+" .tradesinclude").append(trades);
+			$("#modalbox"+result.name+" .bidsinclude span.no_trades").text('There have been no trades with '+result.name+' yet');
+		});
+	});
+}
+
 function calculate(a,b,operator,cf){
 	cf = typeof cf !== 'undefined' ? cf : 100000000;
 	if(operator == '*') {

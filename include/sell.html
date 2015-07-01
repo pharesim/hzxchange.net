@@ -1,0 +1,34 @@
+<fieldset class="identified">
+	<legend>Sell</legend>
+	<div class="no_sell"></div>
+	<div class="sell">
+		Your balance:
+		<span class="asset_balance"></span>
+		<span class="asset_name"></span>
+		<form role="form">
+			<div class="form-group">
+				<label class="sellamount">Amount </label>
+				<div class="input-group">
+					<input type="text" class="form-control sellamount" />
+					<span class="input-group-addon"><?=$result['name']?></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="sellprice">Unit price </label>
+				<div class="input-group">
+					<input type="text" class="form-control sellprice" />
+					<span class="input-group-addon">HZ</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="selltotal">Total </label>
+				<div class="input-group">
+					<input type="text" class="form-control selltotal" readonly/>
+					<span class="input-group-addon">HZ</span>
+				</div>
+			</div>
+			<input type="submit" class="btn btn-default order_button" data-type="sell" value="Sell" />
+			<img src="/img/busy.gif" class="loading_hidden sellbusy" />
+		</form>
+	</div>
+</fieldset>

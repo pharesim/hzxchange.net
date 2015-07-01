@@ -1,6 +1,7 @@
 # hzxchange.net
-HZXchange website
 
-Requires php for now, needs to be rebuilt to load all data on startup
+Standalone version of the HZXchange client
 
-Need a solution for HZ/BTC price (same origin policy, didn't find an api with CORS header yet)
+Download, and open index.html in your browser.
+
+Needs a solution for HZ/BTC price (same origin policy, didn't find an api with CORS header yet)

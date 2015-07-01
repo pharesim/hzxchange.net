@@ -1,0 +1,78 @@
+<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h1 class="modal-header" style="display: inline; font-weight:bold;"></h1>
+				<a href="#" class="btn btn-wide btn-primary h5style deposit identified" data-deposit="false">
+					Get deposit address
+				</a>
+				<img src="/img/busy.gif" class="loading_hidden deposit_loading" />
+				<a href="#" class="btn btn-wide btn-primary h5style withdrawal">
+					Withdraw
+				</a>
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid well warningbox">
+					<div class="row">
+						<div class="col-md-12">
+							<fieldset class="loading_hidden withdraw">
+								<legend>Withdraw</legend>
+								Your balance: <span class="asset_balance"></span>
+								<span class="asset_name"></span>
+								<form role="form">
+									<div class="form-group">
+										<label class="withdrawamount">
+											Amount
+										</label>
+										<div class="input-group">
+											<input type="text" class="form-control withdrawamount" />
+											<span class="input-group-addon withdrawmax">
+												MAX
+											</span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="withdrawaddress">
+											Address
+										</label>
+										<input type="text" class="form-control withdrawaddress" />
+									</div>
+									<input type="submit" value="Cancel" class="btn btn-default withdrawcancelbutton" />
+									<input type="submit" value="Withdraw" class="btn btn-default withdrawbutton" />
+									<img src="/img/busy.gif" class="loading_hidden withdrawbusy" />
+								</form>
+							</fieldset>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 buyinclude"></div>
+						<div class="col-md-6 sellinclude">
+							<?php include './include/sell.php' ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 asksinclude">
+							<?php include './include/asks.php' ?>
+						</div>
+						<div class="col-md-6 bidsinclude">
+							<?php include './include/bids.php' ?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 tradesinclude">
+							<?php include './include/trades.php' ?>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+					Close
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

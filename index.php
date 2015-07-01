@@ -40,7 +40,7 @@
 				<div class="box-5 box"></div>
 			</div>
 		</div>
-		
+
 		<div id="app">
 			<div class="app-content">
 
@@ -51,19 +51,6 @@
 						<div class="row">
 							<div class="col-md-9" style="margin-bottom:30px; padding-left:30px; padding-right:30px;">
 								<div id="tradingcontainer"></div>
-								<?php
-								foreach($results as $id=>$result):
-									$deposit  = true;
-									$withdraw = true;
-									include './include/trade.php';
-								endforeach;
-								foreach($trusted as $id=>$result):
-									$deposit  = false;
-									$withdraw = false;
-									include './include/trade.php';
-								endforeach;
-								?>
-
 								<a href="#" id="settings_link">Settings</a>
 								<div id="settings" title="Set the Horizon server to use with this application. Use your local node for maximum performance.">
 									<label for="server">Server: </label>

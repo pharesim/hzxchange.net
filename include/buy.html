@@ -1,0 +1,35 @@
+<fieldset class="identified">
+	<legend>Buy</legend>
+	<div class="no_buy">
+		You do not have HZ to buy anything
+	</div>
+	<div class="buy">
+		Your balance: <span class="hzbalance"></span> HZ
+		<form role="form">
+			<div class="form-group">
+				<label class="buyamount">Amount </label>
+				<div class="input-group">
+					<input type="text" class="form-control buyamount" />
+					<span class="input-group-addon asset_name">
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="buyprice">Unit price </label>
+				<div class="input-group">
+					<input type="text" class="form-control buyprice" />
+					<span class="input-group-addon">HZ</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="buytotal">Total </label>
+				<div class="input-group">
+					<input type="text" class="form-control buytotal" readonly />
+					<span class="input-group-addon">HZ</span>
+				</div>
+			</div>
+			<input type="submit" class="btn btn-default order_button buysubmit" data-type="buy" value="Buy" />
+			<img src="/img/busy.gif" class="loading_hidden buybusy" />
+		</form>
+	</div>
+</fieldset>

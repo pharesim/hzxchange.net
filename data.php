@@ -20,7 +20,8 @@ $trustedassets = array(
 #	'fireandsmoke'=>'12746842454066497618',
 	'altsheets'=>'8101260088962758269',
 	'hzchronos'=>'14434264033002297623',
-	'upstart'=>'8728095596643050008'
+	'upstart'=>'8728095596643050008',
+	'hzmmnxtt'=>'9588580913946030800'
 );
 
 $results = array();

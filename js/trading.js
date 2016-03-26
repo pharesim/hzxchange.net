@@ -104,7 +104,11 @@ function setBalances(response) {
 	setAssetBalances(response);
 	$("#new_account").hide();
 	$("#balance").show();
-	balance = convertToNHZ(response.unconfirmedBalanceNQT);
+	if(response.unconfirmedBalanceNQT !== undefined) {
+		balance = convertToNHZ(response.unconfirmedBalanceNQT);
+	} else {
+		balance = 0;
+	}
 	$(".hzbalance").text(format(balance));
 	$(".details").show();
 	if(balance >= 1) {
@@ -136,28 +140,31 @@ function getDepositAddresses() {
 			"type": 1,
 			"subtype": 0
 		}, function(response) {
-			for (var i = 0; i < response.transactions.length; ++i) {
-				if($.inArray(response.transactions[i].sender,issuers) > -1 && response.transactions[i].attachment) {
-					if(response.transactions[i].attachment.message.indexOf("Your deposit address for") == 0) {
-						var asset = response.transactions[i].attachment.message.substring(25,32).trim();
-						if(typeof(depositAddresses[asset]) === 'undefined') {
-							var offset = 25 + asset.length + 4;
-							var address = response.transactions[i].attachment.message.substring(offset);
-							var cut = address.search("public key");
-							if(cut > 5) {
-								address = address.substring(0,cut-1);
+			console.log(response.transactions);
+			if(response.transactions !== undefined) {
+				for (var i = 0; i < response.transactions.length; ++i) {
+					if($.inArray(response.transactions[i].sender,issuers) > -1 && response.transactions[i].attachment) {
+						if(response.transactions[i].attachment.message.indexOf("Your deposit address for") == 0) {
+							var asset = response.transactions[i].attachment.message.substring(25,32).trim();
+							if(typeof(depositAddresses[asset]) === 'undefined') {
+								var offset = 25 + asset.length + 4;
+								var address = response.transactions[i].attachment.message.substring(offset);
+								var cut = address.search("public key");
+								if(cut > 5) {
+									address = address.substring(0,cut-1);
+								}
+								depositAddresses[asset] = address.trim();
+								$("#"+asset+"Modal .deposit").attr(
+									"data-deposit",
+									depositAddresses[asset]
+								).text("Deposit");
 							}
-							depositAddresses[asset] = address.trim();
-							$("#"+asset+"Modal .deposit").attr(
-								"data-deposit",
-								depositAddresses[asset]
-							).text("Deposit");
 						}
-					}
-				} else if ($.inArray(response.transactions[i].recipient,issuers) > -1) {
-					for (var asset in issuerswk) {
-						if(issuerswk[asset] == response.transactions[i].recipient && typeof(depositAddresses[asset]) === 'undefined') {
-							depositPending(asset);
+					} else if ($.inArray(response.transactions[i].recipient,issuers) > -1) {
+						for (var asset in issuerswk) {
+							if(issuerswk[asset] == response.transactions[i].recipient && typeof(depositAddresses[asset]) === 'undefined') {
+								depositPending(asset);
+							}
 						}
 					}
 				}
@@ -173,54 +180,57 @@ function depositPending(asset) {
 	).text("Waiting for address");
 }
 
-function getAssets(){
+function getAssets(clickedAsset){
 	for (var asset in assets) {
 		if (assets.hasOwnProperty(asset)) {
 			if(typeof(assets[asset].asset) !== 'undefined'){
 				assets[asset] = assets[asset].asset;
 			}
 
-			sendRequest("getAsset", {
-					"asset": assets[asset]
-				}, function(response){
-					assets[asset] = response;
-				}
-			);
+			if(typeof clickedAsset === 'undefined' || clickedAsset == assets[asset]) {
+				sendRequest("getAsset", {
+						"asset": assets[asset]
+					}, function(response){
+						assets[asset] = response;
+					}
+				);
 
-			sendRequest("getAskOrders", {
-					"asset": assets[asset].asset
-				}, function(response){
-					assets[asset].askOrders = response.askOrders;
-				}
-			);
+				sendRequest("getAskOrders", {
+						"asset": assets[asset].asset
+					}, function(response){
+						assets[asset].askOrders = response.askOrders;
+					}
+				);
 
-			sendRequest("getBidOrders", {
-					"asset": assets[asset].asset
-				}, function(response){
-					assets[asset].bidOrders = response.bidOrders;
-				}
-			);
+				sendRequest("getBidOrders", {
+						"asset": assets[asset].asset
+					}, function(response){
+						assets[asset].bidOrders = response.bidOrders;
+					}
+				);
 
-			sendRequest("getTrades", {
-					"asset": assets[asset].asset,
-					"lastIndex": 49
-				}, function(response){
-					assets[asset].trades = response.trades
-				}
-			);
+				sendRequest("getTrades", {
+						"asset": assets[asset].asset,
+						"lastIndex": 49
+					}, function(response){
+						assets[asset].trades = response.trades
+					}
+				);
+			}
 		}
 	}
 
-	processAssets();
+	processAssets(clickedAsset);
 }
 
-function processAssets(){
+function processAssets(clickedAsset){
 	var total  = 0;
 	var bids   = false;
 	var asks   = false;
 	var trades = false;
 	for (var asset in assets) {
 		if (assets.hasOwnProperty(asset)) {
+			if(typeof clickedAsset === 'undefined' || clickedAsset == assets[asset])
 			$("#"+asset+"Modal .orders_body").empty();
 			total = 0;
 			bids = false;
